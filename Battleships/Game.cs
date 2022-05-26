@@ -20,7 +20,57 @@ namespace Battleships
         // returns: the number of ships sunk by the set of guesses
         public static int Play(string[] ships, string[] guesses)
         {
-            return 0;
+            Dictionary<int, string> game = new Dictionary<int, string>();
+            int misses = 0;
+            int strike = 0;
+            //string[] sampleInput = new string[] { "3:2,3:5", "4:9,7:9" };
+            //string[] tries = new string[] { "5:0", "3:3", "4:9", "3:5", "3:6", "3:2", "3:4" };
+            for (int i = 0; i < ships.Length; i++)
+            {
+                string[] dstructure = ships[i].Split(',');
+                string[] start = dstructure[0].Split(':');
+                string[] end = dstructure[1].Split(':');
+                int max;
+                int min;
+                if (start[0] == end[0]) //horizontal
+                {
+                    max = Math.Max(int.Parse(start[0] + start[1]), int.Parse(end[0] + end[1]));
+                    min = Math.Min(int.Parse(start[0] + start[1]), int.Parse(end[0] + end[1]));
+                    for (int x = min; x <= max; x++)
+                    {
+                        game.Add(x, $"Ship{i}");
+                    }
+                }
+                else
+                {
+                    max = Math.Max(int.Parse(start[0] + start[1]), int.Parse(end[0] + end[1]));
+                    min = Math.Min(int.Parse(start[0] + start[1]), int.Parse(end[0] + end[1]));
+                    for (int x = min; x <= max; x += 10)
+                    {
+                        game.Add(x, $"Ship{i}");
+                    }
+                }
+            }
+            int numberofTries = guesses.Length;
+            for (int i = 0; i < numberofTries; i++)
+            {
+                string[] coordinates = guesses[i].Split(':');
+                int coor = int.Parse(coordinates[0] + coordinates[1]);
+                if (game.ContainsKey(coor))
+                {
+                    game.Remove(coor);
+                    strike++;
+                }
+                else
+                {
+                    misses++;
+                }
+            }
+            Console.WriteLine($"Number of Strikes {strike}");
+            Console.WriteLine($"Number of Misses {misses}");
+            Console.WriteLine($"Number of Sink Boats {ships.Count() - game.Values.Distinct().Count()}");
+            Console.WriteLine("Finish");
+            return (ships.Count() - game.Values.Distinct().Count());
         }
     }
 }
