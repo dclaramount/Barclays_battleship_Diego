@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battleships", "Battleships\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battleships.Test", "Battleships.Test\Battleships.Test.csproj", "{A08DA93F-840A-40A2-8D5A-D20F1A5512F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_VS2022", "Test_VS2022\Test_VS2022.csproj", "{C2B452AF-DECE-40CB-B93E-58DF51B3EA9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A08DA93F-840A-40A2-8D5A-D20F1A5512F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A08DA93F-840A-40A2-8D5A-D20F1A5512F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A08DA93F-840A-40A2-8D5A-D20F1A5512F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2B452AF-DECE-40CB-B93E-58DF51B3EA9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2B452AF-DECE-40CB-B93E-58DF51B3EA9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2B452AF-DECE-40CB-B93E-58DF51B3EA9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2B452AF-DECE-40CB-B93E-58DF51B3EA9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
